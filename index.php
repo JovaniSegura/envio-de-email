@@ -34,39 +34,48 @@ if(isset($_POST["submit"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Envio de email</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <form action="./" method="post">
-        <div class="name">
-            <label for="name">Nombre:</label><br>
-            <input type="text" id="name" name="name" placeholder="Escribe tu nombre completo">
-        </div>
-        <br>
-        <div class="email">
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" placeholder="Escribe tu Email">
-        </div>
-        <br>
-        <div class="subject">
-            <label for="subject">Asunto:</label><br>
-            <input type="text" id="subject" name="subject" placeholder="Escribe aqui en asunto">
-        </div>
-        <br>
-        <div class="message">
-            <label for="message">Mensaje:</label><br>
-            <textarea id="text" name="message" placeholder="Ingresa aqui el cuerpo de tu mensaje"></textarea>
-        </div>
-        <br>
-        <input type="submit" value="submit" name="submit">
-    </form>
+    <main>
+        <form action="./" method="post">
+            <h1>¡Contáctanos!</h1>
+            <div class="name">
+                <label for="name">Nombre:</label><br>
+                <input type="text" id="name" name="name" placeholder="Escribe tu nombre completo">
+            </div>
+            <br>
+            <div class="email">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Escribe tu Email">
+            </div>
+            <br>
+            <div class="subject">
+                <label for="subject">Asunto:</label><br>
+                <input type="text" id="subject" name="subject" placeholder="Escribe aqui en asunto">
+            </div>
+            <br>
+            <div class="message">
+                <label for="message">Mensaje:</label><br>
+                <textarea id="text" name="message" placeholder="Ingresa aqui el cuerpo de tu mensaje"></textarea>
+            </div>
+            <br>
+            <input type="submit" value="submit" name="submit" class="submit">
 
-    <?php if($mensajeMostrado === "succes"): ?>
-        <p style="background-color: green; color: white;">Formulario Enviado con exito</p>
-    <?php endif?>
-    
-    <?php if($mensajeMostrado === "danger"): ?>
-        <p style="background-color: red; color: white">Error! no se envio el formulario, falta algun campo por llenar</p>
-    <?php endif?>
+            <?php if($mensajeMostrado === "succes"): ?>
+                <p class="succes">Formulario Enviado con exito</p>
+                <style type="text/css">
+                    .submit{
+                        display: none;
+                    }
+                </style>
+            <?php endif?>
+        
+            <?php if($mensajeMostrado === "danger"): ?>
+                <p class="danger">¡Error! ¡no se envio el formulario! <br> Falta algun campo por llenar</p>
+            <?php endif?>
 
+        </form>
+    </main>
 </body>
 </html>
